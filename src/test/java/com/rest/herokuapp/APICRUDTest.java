@@ -22,7 +22,7 @@ public class APICRUDTest {
         Response respone = client.getAllBookings();
 
         JSONArray array = new JSONArray(respone.asString());
-        Assert.assertTrue(array.isEmpty());
+        Assert.assertTrue(array.length()>0);
         System.out.println("Total Bookings : "+array.length());
         for(Object booking : array){
             JSONObject obj = (JSONObject) booking;
