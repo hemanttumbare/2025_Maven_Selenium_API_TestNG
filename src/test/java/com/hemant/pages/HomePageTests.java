@@ -18,5 +18,14 @@ public class HomePageTests extends Hooks {
         Assert.assertTrue(homePage.checkHomePageLogo(),"HomePage Logo does not exist...!!!");
     }
 
+    @Test
+    public void testAllureImage(){
+
+        HomePage homePage = new HomePage(BaseDriver.getDriver());
+
+        BaseDriver.getDriver().get("https://magento.softwaretestingboard.com/");
+
+        Assert.fail("This is to check allure report shows image");
+    }
 
 }
