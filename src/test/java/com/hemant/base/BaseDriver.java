@@ -2,8 +2,11 @@ package com.hemant.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 
@@ -18,11 +21,20 @@ public class BaseDriver {
     public static void setUpDriver(String browser){
         WebDriver driver;
         if(browser.equalsIgnoreCase("Firefox")){
-            driver = new FirefoxDriver();
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.addArguments("--headless");
+            firefoxOptions.addArguments("--disable-gpu");
+            driver = new FirefoxDriver(firefoxOptions);
         }else if(browser.equalsIgnoreCase("Edge")){
-            driver = new EdgeDriver();
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.addArguments("--headless");
+            edgeOptions.addArguments("--disable-gpu");
+            driver = new EdgeDriver(edgeOptions);
         }else{
-            driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--headless");
+            chromeOptions.addArguments("--disable-gpu");
+            driver = new ChromeDriver(chromeOptions);
         }
 
         driver.manage().window().maximize();

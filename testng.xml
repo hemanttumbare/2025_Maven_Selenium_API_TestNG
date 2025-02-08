@@ -7,4 +7,9 @@
             <class name="com.hemant.pages.SignInPageTests"></class>
         </classes>
     </test>
+    <test name="API Tests" preserve-order="true">
+        <classes>
+            <class name="com.rest.herokuapp.APICRUDTest"></class>
+        </classes>
+    </test>
 </suite>
