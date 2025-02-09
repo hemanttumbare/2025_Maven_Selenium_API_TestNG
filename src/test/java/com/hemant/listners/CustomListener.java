@@ -9,10 +9,6 @@ import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
 
 import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 
 public class CustomListener implements IInvokedMethodListener {
